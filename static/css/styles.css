@@ -15,6 +15,12 @@ td {
     font-size: 16px;
     font-family: monospace;
 }
+td:hover {
+    background-color: aquamarine;
+}
+tr:hover {
+    background-color: mediumseagreen;
+}
 .gray-row {
     background-color: lightgray;
 }
@@ -22,4 +28,5 @@ td {
 	position: sticky;
 	left: 0;
 	z-index: 1;
+    background-color: lightslategray;
 }

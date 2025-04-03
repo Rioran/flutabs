@@ -8,10 +8,27 @@
 </head>
 <body>
     <h1>Flutabs Grid</h1>
-    <button onclick="addColumns()">Add Columns</button>
-    <button onclick="addOctave()">Add Octave</button>
-    <p></p>
-    <table class="flutabs-grid"></table>
+    <p>
+        <button onclick="initializeGrid()">Reset</button>
+        <button onclick="addColumns()">Add Columns</button>
+        <button onclick="addOctave()">Add Octave</button>
+    </p>
+    <p>
+        <table class="flutabs-grid"></table>
+    </p>
+    <p>
+        <button onclick="serialize()">Get shareable version</button>
+        <button onclick="buildMelodyFromInput()">Visualize shareable melody</button>
+    </p>
+    <p>
+        <textarea id="melodyInput" type="textarea" wrap="soft"></textarea>
+    </p>
+    <h3>Some melodies you can try out:</h3>
+    <p>Twinkle Twinkle little star - simple, single octave: <input type="text" value="0, 0, 7, 7, 9, 9, 7, , 5, 5, 4, 4, 2, 2, 0, 7, 7, 5, 5, 4, 4, 2, , 7, 7, 5, 5, 4, 4, 2, "></p>
+    <p>Kansas City - Carry on - all single octave natural notes: <input type="text" value="4, 7, 7, 12, 11, 7, 7, 9, 7, 5, , 4, 7, 7, 12, 11, 7, 4, 2, , 4, 7, 7, 12, 11, 7, 7, 9, 7, 5, , 4, 2, 4, 2, 0, 0, "></p>
+    <p>Undertale theme - Megalovania - second octave involved + flat note: <input type="text" value="9, 9, 21, 16, , 15, 14, 12, , 9, 12, 14, "></p>
+    <p>Mozart - Symphony No. 40 (transposed) - 2 octaves, lotta flats: <input type="text" value="10, 9, 9, 10, 9, 9, 10, 9, 9, 17, , 17, 16, 14, , 14, 12, 10, , 10, 9, 7, 7, , 9, 7, 7, 9, 7, 7, 9, 7, 7, 16, , 16, 14, 13, , 13, 10, 9, , 9, 7, 5, 5, , 17, 16, 16, 19, 13, 16, 14, 9, , 17, 16, 16, 19, 13, 16, 14, 17, 16, 14, 12, 10, 9, 1, 2, 4, 5, , 7, 5, 4, 2, 9, , 8, 9, , 8, 9, , 8, 9, 20, 21, 20, 21, "></p>
+
     <script src="static/js/code.js" onload="setupPage();" async></script>
 </body>
 </html>

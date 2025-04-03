@@ -30,3 +30,7 @@ tr:hover {
 	z-index: 1;
     background-color: lightslategray;
 }
+#melodyInput {
+    width: 40vw;
+    height: 24vh;
+}

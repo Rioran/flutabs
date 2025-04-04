@@ -1,24 +1,28 @@
 table {
     border-collapse: collapse;
+}
+table.flutabs-grid {
 	table-layout: fixed;
 	width: 100%;
 }
 td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+td.flutabs-grid {
+    border: 1px solid black;
     white-space: nowrap;
     width: 30px;
     max-width: 30px;
     height: 30px;
     max-height: 30px;
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 16px;
     font-family: monospace;
 }
-td:hover {
+td.flutabs-grid:hover {
     background-color: aquamarine;
 }
-tr:hover {
+tr.flutabs-grid:hover {
     background-color: mediumseagreen;
 }
 .gray-row {

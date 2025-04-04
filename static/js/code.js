@@ -12,6 +12,13 @@ let octaves = 0;
 let test = '';
 
 
+const deployKnownMelody = (melodyName) => {
+    const melodyText = MELODIES[melodyName];
+    melodyInput.textContent = melodyText;
+    buildMelodyFromInput();
+}
+
+
 const transposeMelody = () => {
     const transposeValue = parseInt(transposeInput.value, 10);
     const model = getMelodyModel();
@@ -197,9 +204,11 @@ const addOctave = () => {
         const note = notes[row];
         const isGray = grayedNotes.includes(note);
         const tableRow = document.createElement('tr');
+        tableRow.classList.add('flutabs-grid');
 
         for (let col = 0; col < gridColumns; col++) {
             cell = document.createElement('td');
+            cell.classList.add('flutabs-grid');
 
             if (col == 0) {
                 cell.textContent = note; // + '-' + (row == notes.length - 1 ? octaves + 1 : octaves);
@@ -222,18 +231,20 @@ const initializeGrid = (initialColumns = 12) => {
     table.innerHTML = '';
 
     const rowHead = document.createElement('td');
-    rowHead.classList.add('sticky-col');
+    rowHead.classList.add('sticky-col', 'flutabs-grid');
 
     const tdElements = [];
     tdElements.push(rowHead);
 
     for (let col = 1; col <= initialColumns; col++) {
         const td = document.createElement('td');
+        td.classList.add('flutabs-grid');
         tdElements.push(td);
     }
 
     for (let row = 1; row <= notes.length; row++) {
         const tableRow = document.createElement('tr');
+        tableRow.classList.add('flutabs-grid');
         const note = notes[notes.length - row];
 
         tdElements.forEach(td => tableRow.appendChild(td.cloneNode(true)));

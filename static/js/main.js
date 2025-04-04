@@ -96,7 +96,7 @@ const getMelodyModel = () => {
 }
 
 
-const addColumns = (columns = 4) => {
+const addColumns = (columns = 6) => {
 	const rows = document.querySelectorAll("table.flutabs-grid tr");
 
 	rows.forEach((row) => {
@@ -184,6 +184,7 @@ const setupPage = () => {
         
         const row = cell.parentNode.rowIndex;
         const col = cell.cellIndex;
+        const totalCols = table.rows[0].cells.length;
 
         if (col == 0) {return;}
 
@@ -208,5 +209,9 @@ const setupPage = () => {
                 cell.textContent = '';
             }
         });
+
+        if (col >= totalCols - 2) {
+            addColumns(2);
+        }
     });
 }

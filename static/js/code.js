@@ -1,5 +1,6 @@
 const table = document.querySelector('.flutabs-grid');
 const melodyInput = document.getElementById('melodyInput');
+const transposeInput = document.getElementById('transposeInput');
 const notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Si', 'Do'];
 const grayedNotes = ['Do', 'Fa'];
 const flatNotesValues = [1, 3, 6, 8, 10];
@@ -11,8 +12,42 @@ let octaves = 0;
 let test = '';
 
 
-const buildMelodyFromInput = () => {
-    const model = trimModel(deserialize());
+const transposeMelody = () => {
+    const transposeValue = parseInt(transposeInput.value, 10);
+    const model = getMelodyModel();
+    let lowestValue = 0;
+    let correction = 0;
+
+    for (i = 0; i < model.length; i++) {
+        if (model[i] === null) {continue;}
+
+        model[i] += transposeValue;
+
+        if (model[i] < lowestValue) {
+            lowestValue = model[i];
+        }
+    }
+
+
+    while (lowestValue < 0) {
+        lowestValue += 12;
+        correction += 12;
+    }
+
+    if (correction != 0) {
+        for (i = 0; i < model.length; i++) {
+            if (model[i] === null) {continue;}
+    
+            model[i] += correction;
+        }
+    }
+
+    applyModelToGrid(model);
+}
+
+
+const applyModelToGrid = (model) => {
+    model = trimModel(model);
     let topValue = 0;
     
     model.forEach((value) => {
@@ -35,6 +70,12 @@ const buildMelodyFromInput = () => {
         const symbol = data[1];
         table.rows[row].cells[i + 1].textContent = symbol;
     }
+}
+
+
+const buildMelodyFromInput = () => {
+    const model = deserialize();
+    applyModelToGrid(model);
 }
 
 

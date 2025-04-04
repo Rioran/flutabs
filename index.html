@@ -8,29 +8,34 @@
 </head>
 <body>
     <h1>Flutabs Grid</h1>
-    <p>
+    <div class="horizontal-container">
         <button onclick="initializeGrid()">Reset</button>
-        <button onclick="addColumns()">Add Columns</button>
+        <div class="vertical-container">
+            <button onclick="addColumns()">Add Columns</button>
+            <input id="addColumnsInput" type="number" placeholder="cols" min="1" value="6">
+        </div>
         <button onclick="addOctave()">Add Octave</button>
-        <button onclick="transposeMelody()">Transpose</button>
-        <input id="transposeInput" type="number" placeholder="Semitones" value="7">
-        <button onclick="transposeMelodyByValue(1)">Semitone UP</button>
-        <button onclick="transposeMelodyByValue(-1)">Semitone DOWN</button>
-    </p>
-    <p>
-        <table id="flutabs-grid" class="flutabs-grid"></table>
-    </p>
-    <p>
+        <div class="vertical-container">
+            <button onclick="transposeMelody()">Transpose</button>
+            <input id="transposeInput" type="number" placeholder="Semitones" value="7">
+        </div>
+        <div class="vertical-container">
+            <button onclick="transposeMelodyByValue(1)">Semitone UP</button>
+            <button onclick="transposeMelodyByValue(-1)">Semitone DOWN</button>
+        </div>
+    </div>
+
+    <table id="flutabs-grid" class="flutabs-grid"></table>
+    
+    <div class="horizontal-container">
         <button onclick="getMelodyText()">Get shareable version</button>
         <button onclick="buildMelodyFromInput()">Visualize shareable melody</button>
-    </p>
-    <p>
-        <textarea id="melodyInput" type="textarea" wrap="soft"></textarea>
-    </p>
+    </div>
+    <textarea id="melodyInput" type="textarea" wrap="soft"></textarea>
 
     <h3>Some melodies you can try out:</h3>
 
-    <table>
+    <table class="track-list">
         <thead>
             <tr>
                 <th>Name</th>

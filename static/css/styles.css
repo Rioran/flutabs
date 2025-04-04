@@ -1,5 +1,14 @@
+body {
+    display: flex;
+    margin: 17px;
+    gap: 7px;
+    flex-direction: column;
+}
 table {
     border-collapse: collapse;
+}
+table.track-list {
+    max-width: 40vw;
 }
 table.flutabs-grid {
 	table-layout: fixed;
@@ -9,6 +18,9 @@ td {
     text-align: center;
     vertical-align: middle;
     font-size: 16px;
+}
+th {
+    height: 30px;
 }
 td.flutabs-grid {
     border: 1px solid black;
@@ -38,3 +50,23 @@ tr.flutabs-grid:hover {
     width: 40vw;
     height: 24vh;
 }
+.horizontal-container {
+    display: flex;
+    gap: 10px;
+}
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+}
+button, input {
+    min-height: 4vh;
+    min-width: 12vw;
+}
+input[type="number"] {
+    text-align: center;
+    max-width: 7vw;
+    padding: 10px;
+}
+

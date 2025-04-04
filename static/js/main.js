@@ -1,5 +1,6 @@
 const table = document.getElementById('flutabs-grid');
 const melodyInput = document.getElementById('melodyInput');
+const addColumnsInput = document.getElementById('addColumnsInput');
 const transposeInput = document.getElementById('transposeInput');
 
 let gridColumns = 0;
@@ -96,7 +97,11 @@ const getMelodyModel = () => {
 }
 
 
-const addColumns = (columns = 6) => {
+const addColumns = (columns = 0) => {
+    if (columns == 0) {
+        columns = parseInt(addColumnsInput.value, 10);
+    }
+
 	const rows = document.querySelectorAll("table.flutabs-grid tr");
 
 	rows.forEach((row) => {

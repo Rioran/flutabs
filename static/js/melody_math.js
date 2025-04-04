@@ -84,3 +84,33 @@ const valueToNote = (value) => {
 }
 
 
+const transposeModel = (model, transposeValue) => {
+    let lowestValue = 0;
+    let correction = 0;
+
+    for (i = 0; i < model.length; i++) {
+        if (model[i] === null) {continue;}
+
+        model[i] += transposeValue;
+
+        if (model[i] < lowestValue) {
+            lowestValue = model[i];
+        }
+    }
+
+    while (lowestValue < 0) {
+        lowestValue += 12;
+        correction += 12;
+    }
+
+    if (correction != 0) {
+        for (i = 0; i < model.length; i++) {
+            if (model[i] === null) {continue;}
+    
+            model[i] += correction;
+        }
+    }
+
+    return model;
+}
+

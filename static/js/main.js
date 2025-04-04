@@ -16,35 +16,14 @@ const deployKnownMelody = (melodyName) => {
 
 const transposeMelody = () => {
     const transposeValue = parseInt(transposeInput.value, 10);
+    transposeMelodyByValue(transposeValue);
+}
+
+
+const transposeMelodyByValue = (transposeValue) => {
     const model = getMelodyModel();
-    let lowestValue = 0;
-    let correction = 0;
-
-    for (i = 0; i < model.length; i++) {
-        if (model[i] === null) {continue;}
-
-        model[i] += transposeValue;
-
-        if (model[i] < lowestValue) {
-            lowestValue = model[i];
-        }
-    }
-
-
-    while (lowestValue < 0) {
-        lowestValue += 12;
-        correction += 12;
-    }
-
-    if (correction != 0) {
-        for (i = 0; i < model.length; i++) {
-            if (model[i] === null) {continue;}
-    
-            model[i] += correction;
-        }
-    }
-
-    applyModelToGrid(model);
+    const transposedModel = transposeModel(model, transposeValue);
+    applyModelToGrid(transposedModel);
 }
 
 

@@ -13,7 +13,9 @@
         <button onclick="addColumns()">Add Columns</button>
         <button onclick="addOctave()">Add Octave</button>
         <button onclick="transposeMelody()">Transpose</button>
-        <input id="transposeInput" type="number" min="-11" max="11" placeholder="Semitones" value="1">
+        <input id="transposeInput" type="number" placeholder="Semitones" value="7">
+        <button onclick="transposeMelodyByValue(1)">Semitone UP</button>
+        <button onclick="transposeMelodyByValue(-1)">Semitone DOWN</button>
     </p>
     <p>
         <table id="flutabs-grid" class="flutabs-grid"></table>

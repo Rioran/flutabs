@@ -1,11 +1,6 @@
-const table = document.querySelector('.flutabs-grid');
+const table = document.getElementById('flutabs-grid');
 const melodyInput = document.getElementById('melodyInput');
 const transposeInput = document.getElementById('transposeInput');
-const notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Si', 'Do'];
-const grayedNotes = ['Do', 'Fa'];
-const flatNotesValues = [1, 3, 6, 8, 10];
-const noteSymbol = '⬤';
-const flatNoteSymbol = '◀';
 
 let gridColumns = 0;
 let octaves = 0;
@@ -14,7 +9,7 @@ let test = '';
 
 const deployKnownMelody = (melodyName) => {
     const melodyText = MELODIES[melodyName];
-    melodyInput.textContent = melodyText;
+    melodyInput.value = melodyText;
     buildMelodyFromInput();
 }
 
@@ -54,7 +49,7 @@ const transposeMelody = () => {
 
 
 const applyModelToGrid = (model) => {
-    model = trimModel(model);
+    model = stripModel(model);
     let topValue = 0;
     
     model.forEach((value) => {
@@ -81,78 +76,17 @@ const applyModelToGrid = (model) => {
 
 
 const buildMelodyFromInput = () => {
-    const model = deserialize();
+    const model = deserialize(melodyInput.value);
     applyModelToGrid(model);
 }
 
 
-const trimModel = (model) => {
-    let lastIndex = 0;
-
-    for (i = model.length - 1; i > 0; i--) {
-        if (model[i] !== null) {
-            lastIndex = i;
-            break;
-        }
-    }
-
-    return model.slice(0, lastIndex + 1);
-}
-
-
-const deserialize = () => {
-    const text = melodyInput.value;
-    const textArray = text.split(", ");
-
-    const result = textArray.map(value => {
-        if (value === "") {return null;}
-        const parsedValue = parseInt(value, 10);
-        return isNaN(parsedValue) ? null : Math.abs(parsedValue);
-    });
-
-    return result;
-}
-
-
-const serialize = () => {
+const getMelodyText = () => {
     const model = getMelodyModel();
-    let text = '';
-
-    model.forEach((value) => {
-        text += value === null ? ', ' : `${value}, `;
-    });
+    const text = serialize(model);
 
     melodyInput.value = text;
     melodyInput.select();
-}
-
-const valueToNote = (value) => {
-    const octave = Math.floor(value / 12);
-    let row = octave * 7;
-    const remainder = value % 12;
-
-    if (remainder == 0) {
-        return [row, noteSymbol];
-    }
-
-    row += Math.floor((remainder + 1) / 2);
-    // row += remainder >= 5 ? 1 : 0;
-    const symbol = flatNotesValues.includes(remainder) ? flatNoteSymbol : noteSymbol;
-    row += flatNotesValues.includes(remainder) && remainder > 5 ? 1 : 0;
-
-    return [row, symbol];
-}
-
-
-const noteToValue = (tableRows, row, symbol) => {
-    const reverseRow = tableRows - 1 - row;  // count value by notes from below
-
-    let noteValue = reverseRow * 2;  // base value to subtract from it later
-    noteValue -= Math.floor(reverseRow / 7);  // times Do steal the semitone
-    noteValue -= Math.floor((reverseRow + 4) / 7);  // times Fa steal the semitone
-    noteValue -= symbol == noteSymbol ? 0 : 1;  // flatNoteSymbol steals the last semitone
-
-    return noteValue;
 }
 
 
@@ -295,6 +229,5 @@ const setupPage = () => {
                 cell.textContent = '';
             }
         });
-          
     });
 }

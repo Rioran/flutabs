@@ -16,10 +16,10 @@
         <input id="transposeInput" type="number" min="-11" max="11" placeholder="Semitones" value="1">
     </p>
     <p>
-        <table class="flutabs-grid"></table>
+        <table id="flutabs-grid" class="flutabs-grid"></table>
     </p>
     <p>
-        <button onclick="serialize()">Get shareable version</button>
+        <button onclick="getMelodyText()">Get shareable version</button>
         <button onclick="buildMelodyFromInput()">Visualize shareable melody</button>
     </p>
     <p>
@@ -37,8 +37,8 @@
         </thead>
 
         <tr>
-            <td></td>
-            <td></td>
+            <td><button onclick="deployKnownMelody('smoke')">Deep Purple - Smoke on the Water</button></td>
+            <td>Most popular simpliest melody ever.</td>
         </tr>
 
         <tr>
@@ -67,12 +67,13 @@
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('smoke')">Deep Purple - Smoke on the Water</button></td>
-            <td>1 hard octave, perfect for transpose.</td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
 
-    <script src="static/js/melodies_list.js" async></script>
-    <script src="static/js/code.js" onload="setupPage();" async></script>
+    <script src="static/js/constants.js" defer></script>
+    <script src="static/js/melody_math.js" defer></script>
+    <script src="static/js/main.js" onload="setupPage();" defer></script>
 </body>
 </html>

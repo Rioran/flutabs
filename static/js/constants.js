@@ -1,3 +1,9 @@
+const notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Si', 'Do'];
+const grayedNotes = ['Do', 'Fa'];
+const flatNotesValues = [1, 3, 6, 8, 10];
+const noteSymbol = '⬤';
+const flatNoteSymbol = '◀';
+
 MELODIES = {
     'twinkle': '0, 0, 7, 7, 9, 9, 7, , 5, 5, 4, 4, 2, 2, 0, 7, 7, 5, 5, 4, 4, 2, , 7, 7, 5, 5, 4, 4, 2, ',
     'carry on': '4, 7, 7, 12, 11, 7, 7, 9, 7, 5, , 4, 7, 7, 12, 11, 7, 4, 2, , 4, 7, 7, 12, 11, 7, 7, 9, 7, 5, , 4, 2, 4, 2, 0, 0, ',

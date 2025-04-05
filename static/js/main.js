@@ -57,16 +57,26 @@ const applyModelToGrid = (model) => {
 
 const buildMelodyFromInput = () => {
     const model = deserialize(melodyInput.value);
-    applyModelToGrid(model);
+    const strippedModel = stripModel(model);
+    applyModelToGrid(strippedModel);
+
+    if (model != strippedModel) {
+        melodyInput.value = serialize(strippedModel);
+    }
 }
 
 
 const getMelodyText = () => {
-    const model = getMelodyModel();
-    const text = serialize(model);
+    const model = stripModel(getMelodyModel());
+    const strippedModel = stripModel(model);
+    const text = serialize(strippedModel);
 
     melodyInput.value = text;
     melodyInput.select();
+
+    if (model != strippedModel) {
+        applyModelToGrid(model);
+    }
 }
 
 

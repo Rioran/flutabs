@@ -115,6 +115,24 @@ const addColumns = (columns = 0) => {
 }
 
 
+const removeColumns = (columns = 0) => {
+    if (columns == 0) {
+        columns = parseInt(addColumnsInput.value, 10);
+    }
+
+	const rows = document.querySelectorAll("table.flutabs-grid tr");
+    gridColumns = table.rows[0].cells.length;
+
+	rows.forEach((row) => {
+		for (let step = 1; step <= columns && gridColumns - step > 1; step++) {
+			row.deleteCell(gridColumns - step);
+		}
+	});
+
+    gridColumns = table.rows[0].cells.length;
+}
+
+
 const addOctave = () => {
     octaves += 1;
 

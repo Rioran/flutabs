@@ -1,6 +1,8 @@
 # FluTabs - Flute tabulatures
 
-#### Video demo: TODO
+#### Video demo: https://youtu.be/SIT48UL8kl4 3:00
+
+#### Video demo long: https://youtu.be/AU9LGiVEpHA 5:40
 
 #### Try it out: https://rioran.github.io/flutabs/
 
@@ -89,9 +91,9 @@ So here comes FluTabs to land me a hand. How:
 
 #### Melody processing mechanics
 
-- Under the hood of FluTabs interface melodies are organized into lists composed from integers and null values.
+- Under the hood of FluTabs interface melodies are organized into lists composed of integers and null values.
 - To collect a melody list a number of operations are performed in order to compute melody semitones values out of table rows numbers.
-  - First a reverse row number is computed since semitone pitch visually grows in opposite direction to the table row where it is placed visually. Thus row with index 4 from a table with 13 rows in total becomes an reverse row as follows: 13 - 1 - 4 = 8.
+  - First a reverse row number is computed since semitone pitch visually grows in opposite direction to the table row where it is placed visually. Thus row with index 4 from a table with 13 rows in total becomes a reverse row as follows: 13 - 1 - 4 = 8.
   - Next reverse row is multiplied by 2 - since I found it easier to achieve specific note semitone value by subtracting from a duplicate index dependant value.
   - This subtraction operations utilize fact that there are only 2 pairs of notes in the octave which distance is a single semitone instead of two.
 - Semitone value to row index also has several operations included:

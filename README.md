@@ -46,9 +46,12 @@ So here comes FluTabs to land me a hand. How:
 - When melody is loaded - it trims automatically so empty edges are dropped out.
 - Edit the melody both by clicking or by changing the semitones string in the input field.
 - Traspose melodies by a number of semitones or push them step by step via +1 or -1 button.
+- When transposing - FluTabs will delete unused octaves from the top of the grid.
 - Left menu with note names sticks to the screen even if you scroll far horizontally.
 - See whole row highlighted when you hover with mouse for easier note identification.
 - Use "Reset" button to start anew.
+- Add octave above the current one.
+- Add or delete a number of columns from the end of the grid.
 - Several melodies come included - with a single click you can try some popular tunes:
   - Deep Purple - Smoke on the Water. Short, simple, ideal to test FluTabs features.
   - Twinkle Twinkle little star. Almost an octave wide, simple.

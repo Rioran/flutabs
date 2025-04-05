@@ -46,6 +46,7 @@ So here comes FluTabs to land me a hand. How:
 - Share your melody as a link. FluTabs can read parameter "melody" from the href.
 - When melody is loaded - it trims automatically so empty edges are dropped out.
 - Edit the melody both by clicking or by changing the semitones string in the input field.
+- When last 2 columns of melody change - table smoothly scrolls to the added 2 new columns sustaining editing workflow.
 - Traspose melodies by a number of semitones or push them step by step via +1 or -1 button.
 - When transposing - FluTabs will delete unused octaves from the top of the grid.
 - Left menu with note names sticks to the screen even if you scroll far horizontally.

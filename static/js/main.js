@@ -263,6 +263,7 @@ const setupPage = () => {
 
         if (col >= totalCols - 2) {
             addColumns(2);
+            window.scrollBy({'left': 200, 'behavior': 'smooth'});
         }
     });
 

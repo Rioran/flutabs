@@ -43,6 +43,7 @@ So here comes FluTabs to land me a hand. How:
   - Auto columns prolongation when user changes the last or second to last column.
 - Share your melody with others by serializing it into semitones number format with a single push of the "Get shareble version" button.
 - Load melodies from others (or your own) by pasting semitones string into the input field and pressing "Visualize" button.
+- Share your melody as a link. FluTabs can read parameter "melody" from the href.
 - When melody is loaded - it trims automatically so empty edges are dropped out.
 - Edit the melody both by clicking or by changing the semitones string in the input field.
 - Traspose melodies by a number of semitones or push them step by step via +1 or -1 button.

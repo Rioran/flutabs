@@ -8,7 +8,8 @@ table {
     border-collapse: collapse;
 }
 table.track-list {
-    max-width: 40vw;
+    min-width: 20vw;
+    display: inline;
 }
 table.flutabs-grid {
 	table-layout: fixed;

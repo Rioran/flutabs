@@ -197,7 +197,25 @@ const initializeGrid = (initialColumns = 12) => {
     octaves = 0;
 }
 
+
+const parseMelodyFromLink = () => {
+    const link = window.location.href;
+    const parameters = new URL(link).searchParams;
+    return parameters.get('melody');
+}
+
+
+const melodyToLink = () => {
+    const model = getMelodyModel();
+    const melodyEncoded = encodeURIComponent(serialize(model));
+    const link = `${window.location.origin}${window.location.pathname}?melody=${melodyEncoded}`;
+    window.location.href = link;
+}
+
+
 const setupPage = () => {
+    const melody = parseMelodyFromLink();
+
     initializeGrid();
     
     table.addEventListener("click", (event) => {
@@ -237,4 +255,9 @@ const setupPage = () => {
             addColumns(2);
         }
     });
+
+    if (melody !== null) {
+        melodyInput.value = melody;
+        buildMelodyFromInput();
+    }
 }

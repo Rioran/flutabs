@@ -62,7 +62,17 @@ So here comes FluTabs to land me a hand. How:
   - Mozart - Symphony No. 40. Hard 2 octave piece.
   - and others.
 
-#### Key Files
+#### Key bindings
+
+- `ESC` to reset the page without parameters.
+- `q` to add an octave above.
+- `w` to transpose semitone up, `s` to transpose down.
+- `a` to remove columns from right, `d` to add.
+- `z` to capture FluTab as text.
+- `x` to capture FluTab as link with parameter.
+- `c` to build FluTab from input text.
+
+#### Important Files
 
 - [index.html](index.html) - the only page, entry point for the user.
 - [README.md](README.md) - this documentation.

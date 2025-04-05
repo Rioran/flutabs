@@ -215,10 +215,20 @@ const parseMelodyFromLink = () => {
 }
 
 
+const getBaseURL = () => {
+    return `${window.location.origin}${window.location.pathname}`;
+}
+
+
+const resetPage = () => {
+    window.location.href = getBaseURL();
+}
+
+
 const melodyToLink = () => {
     const model = getMelodyModel();
     const melodyEncoded = encodeURIComponent(serialize(model));
-    const link = `${window.location.origin}${window.location.pathname}?melody=${melodyEncoded}`;
+    const link = `${getBaseURL()}?melody=${melodyEncoded}`;
     window.location.href = link;
 }
 
@@ -271,4 +281,16 @@ const setupPage = () => {
         melodyInput.value = melody;
         buildMelodyFromInput();
     }
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key === 'w') {transposeMelodyByValue(1);}
+        else if (event.key === 's') {transposeMelodyByValue(-1);}
+        else if (event.key === 'd') {addColumns();}
+        else if (event.key === 'a') {removeColumns();}
+        else if (event.key === 'q') {addOctave();}
+        else if (event.key === 'Escape') {resetPage();}
+        else if (event.key === 'z') {getMelodyText();}
+        else if (event.key === 'x') {melodyToLink();}
+        else if (event.key === 'c') {buildMelodyFromInput();}
+    });
 }

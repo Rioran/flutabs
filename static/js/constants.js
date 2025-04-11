@@ -1,8 +1,18 @@
-const notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Si', 'Do'];
-const grayedNotes = ['Do', 'Fa'];
-const flatNotesValues = [1, 3, 6, 8, 10];
-const noteSymbol = '⬤';
-const flatNoteSymbol = '◀';
+const DEFAULT_GRID_COLUMNS_COUNT = 24;
+const NOTES_LABELS = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Si', 'Do'];
+const GRAYED_NOTES = ['Do', 'Fa'];
+const FLAT_NOTES_VALUES = [1, 3, 6, 8, 10];
+const NATURAL_NOTE_SYMBOL = '⬤';
+const FLAT_NOTE_SYMBOL = '◀';
+const NOTE_SYMBOLS = ['⬤', '◀', '⬤', '◀', '⬤', '⬤', '◀', '⬤', '◀', '⬤', '◀', '⬤']
+
+MMELODIES = [
+    {
+        'name': '',
+        'description': '',
+        'link': '',
+    },
+];
 
 MELODIES = {
     'twinkle': '0, 0, 7, 7, 9, 9, 7, , 5, 5, 4, 4, 2, 2, 0, 7, 7, 5, 5, 4, 4, 2, , 7, 7, 5, 5, 4, 4, 2, ',

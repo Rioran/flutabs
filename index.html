@@ -16,35 +16,35 @@
 <body>
     <h1>FluTabs / <a href="https://github.com/Rioran/flutabs/blob/main/README.md">docs</a></h1>
     <div class="horizontal-container">
-        <button onclick="resetPage();">Reset</button>
+        <button onclick="flutabs.reset_page();">Reset</button>
         <div class="vertical-container">
-            <button onclick="addColumns()">Add Columns</button>
+            <button onclick="flutabs.grid.add_columns()">Add Columns</button>
             <input id="addColumnsInput" type="number" placeholder="cols" min="1" value="6">
-            <button onclick="removeColumns()">Remove Columns</button>
+            <button onclick="flutabs.grid.remove_columns()">Remove Columns</button>
         </div>
-        <button onclick="addOctave()">Add Octave</button>
+        <button onclick="flutabs.grid.add_octave()">Add Octave</button>
         <div class="vertical-container">
-            <button onclick="transposeMelody()">Transpose</button>
+            <button onclick="flutabs.transpose_by_value()">Transpose</button>
             <input id="transposeInput" type="number" placeholder="Semitones" value="7">
         </div>
         <div class="vertical-container">
-            <button onclick="transposeMelodyByValue(1)">Semitone UP</button>
-            <button onclick="transposeMelodyByValue(-1)">Semitone DOWN</button>
+            <button onclick="flutabs.transpose_by_value(1)">Semitone UP</button>
+            <button onclick="flutabs.transpose_by_value(-1)">Semitone DOWN</button>
         </div>
     </div>
 
     <table id="flutabs-grid" class="flutabs-grid"></table>
     
     <div class="horizontal-container">
-        <button onclick="getMelodyText()">My FluTab to text</button>
-        <button onclick="melodyToLink()">My FluTab to link</button>
-        <button onclick="buildMelodyFromInput()">Text below to FluTab</button>
+        <button onclick="flutabs.get_melody_text()">My FluTab to text</button>
+        <button onclick="flutabs.melody_to_link()">My FluTab to link</button>
+        <button onclick="flutabs.melody_text_to_grid()">Text below to FluTab</button>
     </div>
     <textarea id="melodyInput" wrap="soft"></textarea>
 
     <h3>Some melodies you can try out:</h3>
 
-    <table class="track-list">
+    <table id="track-list" class="track-list">
         <thead>
             <tr>
                 <th>Name</th>
@@ -53,43 +53,46 @@
         </thead>
 
         <tr>
-            <td><button onclick="deployKnownMelody('smoke')">Deep Purple - Smoke on the Water</button></td>
+            <td><button onclick="flutabs.deploy_melody('smoke')">Deep Purple - Smoke on the Water</button></td>
             <td>Most popular simpliest melody ever.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('twinkle')">Twinkle Twinkle little star</button></td>
+            <td><button onclick="flutabs.deploy_melody('twinkle')">Twinkle Twinkle little star</button></td>
             <td>Simple, single octave.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('carry on')">Kansas City - Carry on</button></td>
+            <td><button onclick="flutabs.deploy_melody('carry on')">Kansas City - Carry on</button></td>
             <td>All single octave notes are natural.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('megalovania')">Undertale theme - Megalovania</button></td>
+            <td><button onclick="flutabs.deploy_melody('megalovania')">Undertale theme - Megalovania</button></td>
             <td>Second octave is involved + single flat note.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('symphony40')">Mozart - Symphony No. 40</button></td>
+            <td><button onclick="flutabs.deploy_melody('symphony40')">Mozart - Symphony No. 40</button></td>
             <td>2 octaves, lotta flats.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('guren')">Attack on Titan OP 1 - "Guren no Yumiya" intro</button></td>
+            <td><button onclick="flutabs.deploy_melody('guren')">Attack on Titan OP 1 - "Guren no Yumiya" intro</button></td>
             <td>1 hard octave, perfect for transpose.</td>
         </tr>
 
         <tr>
-            <td><button onclick="deployKnownMelody('ducktales')">Duck Tales theme</button></td>
+            <td><button onclick="flutabs.deploy_melody('ducktales')">Duck Tales theme</button></td>
             <td>2 octaves, medium difficulty, dynamic.</td>
         </tr>
     </table>
 
     <script src="static/js/constants.js" defer></script>
-    <script src="static/js/melody_math.js" defer></script>
-    <script src="static/js/main.js" onload="setupPage();" defer></script>
+    <script src="static/js/page_items_class.js" defer></script>
+    <script src="static/js/melody_class.js" defer></script>
+    <script src="static/js/grid_class.js" defer></script>
+    <script src="static/js/flutabs_class.js" defer></script>
+    <script src="static/js/app.js" defer></script>
 </body>
 </html>

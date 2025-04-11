@@ -3,6 +3,8 @@ class FluTabs {
         this.items = new PageItems();
         this.melody = new Melody(this.items);
         this.grid = new Grid(this.items, this.melody);
+
+        this.process_click = this.process_click.bind(this);
     }
 
     get_base_url() {
@@ -74,5 +76,7 @@ class FluTabs {
             table.add_columns(2);
             window.scrollBy({'left': 200, 'behavior': 'smooth'});
         }
+
+        this.melody.update_melody_from_grid();
     }
 }

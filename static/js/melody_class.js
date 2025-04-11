@@ -95,6 +95,12 @@ class Melody {
         return model.slice(first_index, last_index + 1);
     }
 
+    strip_melody() {
+        this.melody_model = this.strip_model(this.melody_model);
+        this.melody_text = this.model_to_text();
+        this.update_melody();
+    }
+
     transpose(value = 0) {
         if (value == 0) {
             value = parseInt(this.items.transpose_amount.value, 10);

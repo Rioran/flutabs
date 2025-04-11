@@ -41,6 +41,12 @@ class FluTabs {
         this.grid.update();
     }
 
+    strip_melody() {
+        this.melody.strip_melody();
+        this.grid.update();
+        this.get_melody_text();
+    }
+
     process_click(event) {
         const cell = event.target;
     

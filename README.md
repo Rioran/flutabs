@@ -68,6 +68,7 @@ So here comes FluTabs to land me a hand. How:
 
 - `ESC` to reset the page without parameters.
 - `q` to add an octave above.
+- `e` to strip melody - remove whitespace on edges.
 - `w` to transpose semitone up, `s` to transpose down.
 - `a` to remove columns from right, `d` to add.
 - `z` to capture FluTab as text.

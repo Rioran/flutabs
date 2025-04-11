@@ -13,4 +13,5 @@ document.addEventListener("keyup", (event) => {
     else if (event.key === 'z') {flutabs.get_melody_text();}
     else if (event.key === 'x') {flutabs.melody_to_link();}
     else if (event.key === 'c') {flutabs.melody_text_to_grid();}
+    else if (event.key === 'e') {flutabs.strip_melody();}
 });

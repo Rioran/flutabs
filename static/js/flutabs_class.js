@@ -15,8 +15,8 @@ class FluTabs {
         window.location.href = this.get_base_url();
     }
 
-    deploy_melody(melody_name) {
-        this.items.melody_text.value = MELODIES[melody_name];
+    deploy_melody(melody_text) {
+        this.items.melody_text.value = melody_text;
         this.melody.update_melody_from_input();
         this.grid.update();
     }

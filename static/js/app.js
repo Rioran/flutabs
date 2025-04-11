@@ -1,6 +1,6 @@
 const flutabs = new FluTabs();
 
-flutabs.grid.grid.addEventListener("click", flutabs.process_click);
+flutabs.items.grid.addEventListener("click", flutabs.process_click);
 
 
 document.addEventListener("keyup", (event) => {

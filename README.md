@@ -42,6 +42,7 @@ So here comes FluTabs to land me a hand. How:
 
 - Visually construct a melody in a recorder friendly format with common notes notation simplified.
   - Click grid cells to either assign a note ⬤, change it to a flat note ◀ or to clear whole column
+  - Use Shift+Click to assign a flat note ◀ stright away.
   - Auto columns prolongation when user changes the last or second to last column.
 - Share your melody with others by serializing it into semitones number format with a single push of the "Get shareble version" button.
 - Load melodies from others (or your own) by pasting semitones string into the input field and pressing "Visualize" button.

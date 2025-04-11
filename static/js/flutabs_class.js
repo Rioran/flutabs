@@ -60,7 +60,11 @@ class FluTabs {
         if (col == 0) {return;}
     
         if (cell.textContent == '') {
-            cell.textContent = NATURAL_NOTE_SYMBOL;
+            if (event.shiftKey) {
+                cell.textContent = FLAT_NOTE_SYMBOL;
+            } else {
+                cell.textContent = NATURAL_NOTE_SYMBOL;
+            }
         } else if (cell.textContent == NATURAL_NOTE_SYMBOL) {
             const note = table.rows[row].firstElementChild.textContent;
     
@@ -82,6 +86,9 @@ class FluTabs {
             table.add_columns(2);
             window.scrollBy({'left': 200, 'behavior': 'smooth'});
         }
+
+        const selection = window.getSelection();
+        if (selection) {selection.removeAllRanges();}      
 
         this.melody.update_melody_from_grid();
     }

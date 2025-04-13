@@ -2,6 +2,7 @@ const flutabs = new FluTabs();
 
 flutabs.items.grid.addEventListener("click", flutabs.process_click);
 
+flutabs.items.columns_amount.addEventListener("keydown", flutabs.process_columns_enter);
 
 document.addEventListener("keyup", (event) => {
     if (event.key === 'q') {flutabs.grid.add_octave();}

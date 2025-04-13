@@ -92,4 +92,10 @@ class FluTabs {
 
         this.melody.update_melody_from_grid();
     }
+
+    process_columns_enter(event) {
+        if (event.key === "Enter") {
+            flutabs.grid.add_columns();
+        }
+    }
 }

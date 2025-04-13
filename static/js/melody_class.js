@@ -11,6 +11,8 @@ class Melody {
         this.octaves = null;
 
         this.update_melody();
+
+        if (this.melody_text !== null) {this.items.melody_text.value = this.melody_text}
     }
 
     update_melody() {

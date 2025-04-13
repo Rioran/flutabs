@@ -83,7 +83,7 @@ class FluTabs {
         });
     
         if (col >= cols_total - 2) {
-            table.add_columns(2);
+            this.grid.add_columns(2);
             window.scrollBy({'left': 200, 'behavior': 'smooth'});
         }
 

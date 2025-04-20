@@ -5,6 +5,7 @@ const FLAT_NOTES_VALUES = [1, 3, 6, 8, 10];
 const NATURAL_NOTE_SYMBOL = '⬤';
 const FLAT_NOTE_SYMBOL = '◀';
 const NOTE_SYMBOLS = ['⬤', '◀', '⬤', '◀', '⬤', '⬤', '◀', '⬤', '◀', '⬤', '◀', '⬤']
+const FLUTABS_GRID_ID = 'flutabs-grid';
 
 
 MELODIES = [

@@ -1,6 +1,6 @@
 class PageItems {
     constructor() {
-        this.grid = document.getElementById('flutabs-grid');  // table tag object for notes
+        this.grid = document.getElementById(FLUTABS_GRID_ID);  // table tag object for notes
         this.comments = null;  // upper row with comments, TODO
         this.note_heads = null;  // left sticky column with note names, TODO
 

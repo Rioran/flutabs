@@ -21,9 +21,14 @@ class Melody {
         this.octaves = 1;
 
         if (this.top_value > 0) {
-            this.octaves = Math.floor(this.top_value / 12) - Math.floor(this.bottom_value / 12) + 1;
+            this.octaves = Math.floor(this.top_value / 12) + 1;
             if (this.top_value % 12 == 0) {this.octaves--;}
         }
+
+        console.log(`melody melody_model = ${this.melody_model}`);
+        console.log(`melody top_value = ${this.top_value}`);
+        console.log(`melody bottom_value = ${this.bottom_value}`);
+        console.log(`melody octaves = ${this.octaves}`);
     }
     
     update_melody_from_input() {

@@ -13,7 +13,9 @@ class Grid {
     }
 
     build() {
-        while (this.grid.rows.length > 0) {this.grid.deleteRow(0);}
+        const grid = document.getElementById(FLUTABS_GRID_ID);
+
+        while (grid.rows.length > 0) {grid.deleteRow(0);}
         
         const row_head = document.createElement('td');
         row_head.classList.add('sticky-col', 'flutabs-grid');
@@ -40,17 +42,19 @@ class Grid {
     
             if (GRAYED_NOTES.includes(note)) {tr_item.classList.add('gray-row');}
     
-            this.grid.appendChild(tr_item);
+            grid.appendChild(tr_item);
         }
     }
 
     fill() {
+        const grid = document.getElementById(FLUTABS_GRID_ID);
+
         for (let i = 0; i < this.melody.melody_model.length; i++) {
             if (this.melody.melody_model[i] === null) {continue;}
             const note_value = this.melody.melody_model[i];
-            const row = this.grid.rows.length - this.melody.get_row_by_note_value(note_value) - 1;
+            const row = grid.rows.length - this.melody.get_row_by_note_value(note_value) - 1;
             const symbol = this.melody.get_symbol_by_note_value(note_value);
-            this.grid.rows[row].cells[i + 1].textContent = symbol;
+            grid.rows[row].cells[i + 1].textContent = symbol;
         }
     }
 
